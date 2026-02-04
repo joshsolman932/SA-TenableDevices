@@ -45,6 +45,15 @@ jobs:
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "appid=${APPID}" >> $GITHUB_OUTPUT
 
+      - name: Run AppInspect
+        uses: splunk/appinspect-cli-action@v2
+        with:
+          app_path: dist/${{ steps.build.outputs.name }}.tgz
+          included_tags: cloud, self-service
+        env:
+          SPLUNK_USER: ${{ secrets.SPLUNK_USER }}
+          SPLUNK_PASSWORD: ${{ secrets.SPLUNK_PASSWORD }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
