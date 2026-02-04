@@ -10,6 +10,7 @@ Version: major.minor from app_build.yml, patch from git commit count.
 """
 import os
 import re
+import json
 import shutil
 import tarfile
 import subprocess
@@ -57,6 +58,17 @@ def update_app_conf_version(app_conf_path, version):
         f.write(content)
 
 
+def update_app_manifest_version(manifest_path, version):
+    """Update the version in app.manifest file."""
+    with open(manifest_path, "r") as f:
+        manifest = json.load(f)
+
+    manifest["info"]["id"]["version"] = version
+
+    with open(manifest_path, "w") as f:
+        json.dump(manifest, f, indent=4)
+
+
 def main():
     with open(APP_BUILD_YML) as f:
         config = yaml.safe_load(f)
@@ -87,6 +99,11 @@ def main():
     app_conf_path = os.path.join(app_dir, "default", "app.conf")
     if os.path.exists(app_conf_path):
         update_app_conf_version(app_conf_path, version)
+
+    # Update version in app.manifest
+    manifest_path = os.path.join(app_dir, "app.manifest")
+    if os.path.exists(manifest_path):
+        update_app_manifest_version(manifest_path, version)
 
     # Package as .tgz
     tgz_path = os.path.join(DIST_DIR, f"{name}.tgz")
