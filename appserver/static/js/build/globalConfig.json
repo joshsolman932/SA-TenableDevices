@@ -1,0 +1,14 @@
+{
+    "meta": {
+        "name": "SA-TenableDevices",
+        "restRoot": "SA-TenableDevices",
+        "version": "0.0.1",
+        "displayName": "SA-TenableDevices",
+        "schemaVersion": "0.0.9",
+        "supportedThemes": [
+            "light",
+            "dark"
+        ],
+        "_uccVersion": "5.59.0"
+    }
+}

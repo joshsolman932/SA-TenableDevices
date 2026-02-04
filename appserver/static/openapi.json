@@ -1,0 +1,43 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SA-TenableDevices",
+        "version": "0.0.1",
+        "description": "SA-TenableDevices",
+        "contact": {
+            "name": ""
+        },
+        "license": {
+            "name": "LICENSE.txt"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://{domain}:{port}/servicesNS/-/SA-TenableDevices",
+            "variables": {
+                "domain": {
+                    "default": "localhost"
+                },
+                "port": {
+                    "default": "8089"
+                }
+            },
+            "description": "Access via management interface"
+        }
+    ],
+    "components": {
+        "schemas": {},
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        }
+    },
+    "paths": {},
+    "security": [
+        {
+            "BasicAuth": []
+        }
+    ]
+}
