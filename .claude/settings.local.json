@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Splunk app files for SA-TenableDevices\n\nIncludes app configuration, Python libraries, lookups, metadata, and static assets.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(gh auth status:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
