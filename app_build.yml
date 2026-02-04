@@ -1,7 +1,7 @@
 app:
   title: SA-TenableDevices
   appid: SA-TenableDevices
-  version: "0.0"
+  version: "1.0"
   description: Splunk Enterprise Security Assets and Identities integration for Tenable Devices
   author_name: jsolman@splunk.com
   author_email: jsolman@splunk.com
