@@ -1,6 +1,7 @@
 name: Build Splunk App
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -16,6 +17,7 @@ on:
       - 'README.md'
       - 'app.manifest'
       - 'app_build.yml'
+      - 'build.py'
 
 jobs:
   build:
